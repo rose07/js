@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>photo-animation</title>
+    <style type="text/css">
+    .content-box {
+        width: 300px;
+        height: 300px;
+        /*margin-top:200px: */
+        margin: 100px auto;
+        transform-style: preserve-3d;
+        animation: photo 8s infinite;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    img {
+        width: 200px;
+        height: 200px;
+        opacity: 0.9;
+        position: absolute;
+    }
+
+    @keyframes photo {
+        form {
+            transform: rotateY(0deg);
+        }
+        to {
+            transform: rotateY(360deg);
+        }
+    }
+
+    img:nth-child(1) {
+        transform: rotateY(36deg) translateZ(300px);
+    }
+
+    img:nth-child(2) {
+        transform: rotateY(86deg) translateZ(300px);
+    }
+
+    img:nth-child(3) {
+        transform: rotateY(136deg) translateZ(300px);
+    }
+
+    img:nth-child(4) {
+        transform: rotateY(186deg) translateZ(300px);
+    }
+
+    img:nth-child(5) {
+        transform: rotateY(236deg) translateZ(300px);
+    }
+
+    img:nth-child(6) {
+        transform: rotateY(286deg) translateZ(300px);
+    }
+
+    img:nth-child(7) {
+        transform: rotateY(336deg) translateZ(300px);
+    }
+
+    body {
+        /*transform-style: preserve-3d;*/
+        /*perspective: 3000px;*/
+    }
+    </style>
+</head>
+
+<body>
+    <h1>相册动画</h1>
+    <!-- 
+	思路：1.有一个大盒子，里面放图片
+		  2.transform-style:preserve-3d   旋转类型：3D
+		  3.动画 animation :动画名字 时间 方式
+		  4.keyframes 动画{ 
+		  // 动画旋转的度数
+		  from{
+			transform:rotateY(0deg) ;
+		  }
+		  to{
+			transform:rotateY(360deg) ;
+		  }
+		  }
+		  5.指定每个图片旋转的度数以及围绕那个坐标轴旋转  
+		  transform: rotateY(286deg) translateZ(300px);
+	 -->
+    <div class="content-box">
+        <img src="1.jpg" />
+        <img src="2.png" />
+        <img src="3.jpg" />
+        <img src="4.jpg" />
+        <img src="5.jpg" />
+        <img src="4.jpg" />
+        <img src="5.jpg" />
+    </div>
+</body>
+
+</html>
